@@ -6,6 +6,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 import uuid
 import secrets
 from flask_cors import CORS
+from sqlalchemy.dialects import postgresql
 
 app = Flask(__name__)
 app.config[
