@@ -7,6 +7,7 @@ import uuid
 import secrets
 from flask_cors import CORS
 from sqlalchemy.dialects import postgresql
+from flask_migrate import Migrate
 
 app = Flask(__name__)
 app.config[
@@ -14,6 +15,8 @@ app.config[
 ] = "postgres://default:dbWXEvr2ZSi0@ep-wild-feather-19186131.us-east-1.postgres.vercel-storage.com:5432/verceldb"
 db = SQLAlchemy(app)
 CORS(app)
+
+migrate = Migrate(app, db)
 
 
 class Code(db.Model):
