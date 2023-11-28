@@ -8,7 +8,9 @@ import secrets
 from flask_cors import CORS
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///codes.db"
+app.config[
+    "SQLALCHEMY_DATABASE_URI"
+] = "postgres://default:dbWXEvr2ZSi0@ep-wild-feather-19186131.us-east-1.postgres.vercel-storage.com:5432/verceldb"
 db = SQLAlchemy(app)
 CORS(app)
 
